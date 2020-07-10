@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="40dp"
+    tools:context=".Mainmenu">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorash"
+        android:gravity="center_horizontal"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_mainmenu_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Main Menu"
+        android:textColor="@color/colorblack"
+        android:textSize="25dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linerlayout1"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/button_productentry"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/plus"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Product Entry"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/buttonproductlist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/list"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Product List"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liner_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/linerlayout1">
+
+            <Button
+                android:id="@+id/button_orderentry"
+                android:layout_width="88dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/plusorder"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Order Entry"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_orderlist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/listorder"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Order List"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/liner_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/liner_layout2">
+
+            <Button
+                android:id="@+id/button_customerlist"
+                android:layout_width="88dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/customer"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Customer List"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_sellerlist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/user"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Seller List"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liner_layout4"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/liner_layout3">
+
+            <Button
+                android:id="@+id/button_areaadd"
+                android:layout_width="88dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/ic_add"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Area Entry"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_arealist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:drawableTop="@drawable/ic_location"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Area List"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

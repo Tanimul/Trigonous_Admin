@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "926735213923",
+    "firebase_url": "https://trigonous-admin.firebaseio.com",
+    "project_id": "trigonous-admin",
+    "storage_bucket": "trigonous-admin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926735213923:android:312d664fa2328424a1df56",
+        "android_client_info": {
+          "package_name": "com.example.trigonousadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926735213923-7daer48rdtp7v8hmv8flqajkrjums0cf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.trigonousadmin",
+            "certificate_hash": "f3bc0802e0df2bfc8d5ce4ccddfb1051dc523df7"
+          }
+        },
+        {
+          "client_id": "926735213923-rnac52ub6dmsjjb0bl0kh047673bbbh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzEO-OtqtNEvTLiARdaGQfe2_F_r1dF10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926735213923-rnac52ub6dmsjjb0bl0kh047673bbbh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
