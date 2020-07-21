@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ui.ProductList">
+    tools:context=".Ui.ProductCategories">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar"
@@ -33,39 +33,28 @@
 
                 <TextView
                     android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="15dp"
                     android:layout_toRightOf="@id/back"
+                    android:text="Product Categories"
                     android:textColor="@color/colorblack"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/product_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="5dp"
-                    android:background="@android:color/transparent"
-                    android:drawableRight="@drawable/ic_search"
-                    android:hint="Product Search ..."
-                    android:paddingLeft="20dp"
-                    android:paddingRight="15dp"
-                    android:textColorHint="@color/colorAccent" />
             </RelativeLayout>
 
 
         </androidx.appcompat.widget.Toolbar>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_productlist"
+        android:id="@+id/recycler_view_category"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/bar"
         tools:ignore="MissingConstraints"
-        tools:listitem="@layout/productcard" />
-
+        tools:listitem="@layout/categories_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

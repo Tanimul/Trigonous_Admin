@@ -14,7 +14,7 @@
         tools:ignore="MissingConstraints">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_dropcomplain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/windowBackground">
@@ -23,18 +23,314 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp">
 
-
-                <TextView
+                <ImageView
+                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/back"
                     android:text="Product Entry"
                     android:textColor="@color/colorblack"
-                    android:textSize="20sp"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/productentry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/button2background"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="ENTRY"
+                    android:textColor="@color/colorblack"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
             </RelativeLayout>
-        </androidx.appcompat.widget.Toolbar>
 
+
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:background="?android:attr/windowBackground"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linerlayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/adminPhoto"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_user"
+                    app:civ_border_color="@color/colorblack"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/adminname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="Admin name"
+                        android:textColor="@color/colorblack"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintlayot3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="?android:attr/windowBackground"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/linerlayout1">
+
+            <EditText
+                android:id="@+id/productcodeET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Product Code"
+                android:inputType="none"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/productnameET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Product Name"
+                android:inputType="text"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/productpriceET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Product Price"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintlayot4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="?android:attr/windowBackground"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintTop_toBottomOf="@id/constraintlayot3">
+
+            <EditText
+                android:id="@+id/productquantityET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1.4"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/productsellET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="2.45"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Sell"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/productavailableET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.15"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Available"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/liner_layout6"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="?android:attr/windowBackground"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/constraintlayot4">
+
+            <EditText
+                android:id="@+id/productdiscountpriceET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="0.8"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Discount price"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+            <Spinner
+                android:id="@+id/spinnerproductcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1.22"
+                android:gravity="center"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayot5"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="2dp"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintTop_toBottomOf="@id/liner_layout6">
+
+            <EditText
+                android:id="@+id/productdescriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittextbackground"
+                android:gravity="start"
+                android:hint="Describe your Product ..."
+                android:inputType="none"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageforproduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="55dp"
+            android:background="?android:attr/windowBackground" />
+
+        <ImageButton
+            android:id="@+id/closeproductimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@null"
+            android:src="@drawable/ic_close"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintlayot5" />
+
+
+        <LinearLayout
+            android:id="@+id/linerlayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/addproductphoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonbackground"
+                android:drawableLeft="@drawable/ic_image"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="    Photo"
+                android:textAllCaps="false"
+                android:textColor="@color/colorblack"
+                tools:ignore="MissingConstraints" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

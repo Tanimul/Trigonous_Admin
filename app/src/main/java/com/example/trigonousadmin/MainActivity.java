@@ -12,6 +12,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +29,7 @@ import com.example.trigonousadmin.Ui.CustomerList;
 import com.example.trigonousadmin.Ui.OrderEntry;
 import com.example.trigonousadmin.Ui.OrderList;
 import com.example.trigonousadmin.Ui.ProductEntry;
-import com.example.trigonousadmin.Ui.ProductList;
+import com.example.trigonousadmin.Ui.ProductCategories;
 import com.example.trigonousadmin.Ui.SellerList;
 import com.example.trigonousadmin.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar toolbar;
     TextView headerName;
     ImageView headerPic;
+    private long lastclicktime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,36 +129,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        if (SystemClock.elapsedRealtime() - lastclicktime < 1000) {
+            return;
+        }
+        lastclicktime = SystemClock.elapsedRealtime();
 
         if (v == binding.mainActivity.buttonProductentry) {
             Intent intent = new Intent(MainActivity.this, ProductEntry.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonproductlist) {
-            Intent intent = new Intent(MainActivity.this, ProductList.class);
+        else if (v == binding.mainActivity.buttonproductlist) {
+            Intent intent = new Intent(MainActivity.this, ProductCategories.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonOrderentry) {
+        else if (v == binding.mainActivity.buttonOrderentry) {
             Intent intent = new Intent(MainActivity.this, OrderEntry.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonCustomerlist) {
+        else if (v == binding.mainActivity.buttonCustomerlist) {
             Intent intent = new Intent(MainActivity.this, CustomerList.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonSellerlist) {
+        else if (v == binding.mainActivity.buttonSellerlist) {
             Intent intent = new Intent(MainActivity.this, SellerList.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonAreaadd) {
+        else if (v == binding.mainActivity.buttonAreaadd) {
             Intent intent = new Intent(MainActivity.this, AreaEntry.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonArealist) {
+        else if (v == binding.mainActivity.buttonArealist) {
             Intent intent = new Intent(MainActivity.this, AreaList.class);
             startActivity(intent);
         }
-        if (v == binding.mainActivity.buttonOrderlist) {
+        else if (v == binding.mainActivity.buttonOrderlist) {
             Intent intent = new Intent(MainActivity.this, OrderList.class);
             startActivity(intent);
         }
