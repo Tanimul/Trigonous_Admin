@@ -49,6 +49,15 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         Glide.with(context).load(product.getProducturl())
                 .placeholder(R.drawable.ic_image).into(holder.productimage);
 
+
+        if (product.getProductavailable() == 0) {
+            holder.product_code.setTextColor(context.getResources().getColor(R.color.colorred));
+            holder.product_name.setTextColor(context.getResources().getColor(R.color.colorred));
+        } else {
+            holder.product_code.setTextColor(context.getResources().getColor(R.color.colorblack));
+            holder.product_name.setTextColor(context.getResources().getColor(R.color.colorblack));
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

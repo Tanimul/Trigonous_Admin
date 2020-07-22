@@ -124,7 +124,8 @@
             android:layout_marginRight="2dp"
             android:background="?android:attr/windowBackground"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
             app:layout_constraintTop_toBottomOf="@id/linerlayout1">
 
             <EditText
@@ -139,44 +140,28 @@
                 android:inputType="none"
                 android:padding="5dp"
                 tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/ordernameET"
+            <Spinner
+                android:id="@+id/spinnerproductcategory"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
-                android:background="@drawable/edittextbackground"
                 android:gravity="center"
-                android:hint="Product Name"
-                android:inputType="text"
                 android:padding="5dp"
                 tools:ignore="MissingConstraints" />
 
-            <EditText
-                android:id="@+id/ordercostET"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/edittextbackground"
-                android:gravity="center"
-                android:hint="Product Cost"
-                android:inputType="number"
-                android:padding="5dp"
-                tools:ignore="MissingConstraints" />
+
         </LinearLayout>
-
         <LinearLayout
-            android:id="@+id/liner_layout6"
+            android:id="@+id/constraintlayot4"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="5dp"
             android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
             android:background="?android:attr/windowBackground"
             android:orientation="horizontal"
-            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:weightSum="4"
             app:layout_constraintTop_toBottomOf="@id/constraintlayot3">
 
             <EditText
@@ -184,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="3dp"
-                android:layout_weight="1"
+                android:layout_weight="2.5"
                 android:background="@drawable/edittextbackground"
                 android:gravity="center"
                 android:hint="Quantity"
@@ -192,17 +177,87 @@
                 android:padding="5dp"
                 tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/orderdateET"
+            <EditText
+                android:id="@+id/ordercostET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:layout_marginRight="3dp"
+                android:hint="Product Cost"
+                android:inputType="number"
+                android:padding="5dp"
+
+                tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/deliverycostET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="0.8"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Delivery Cost"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liner_layout6"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="?android:attr/windowBackground"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/constraintlayot4">
+
+            <EditText
+                android:id="@+id/ordertotalcostET"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/edittextbackground"
                 android:gravity="center"
-                android:hint="Date"
+                android:hint="Total Cost"
+                android:inputType="number"
                 android:padding="5dp"
                 tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/totalpaidET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:layout_marginRight="3dp"
+                android:hint="Total Paid"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/totaldueET"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1.1"
+                android:background="@drawable/edittextbackground"
+                android:gravity="center"
+                android:hint="Total Due"
+                android:inputType="number"
+                android:padding="5dp"
+                tools:ignore="MissingConstraints" />
+
 
         </LinearLayout>
 
@@ -211,7 +266,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="2dp"
             android:layout_marginBottom="2dp"
             android:background="?android:attr/windowBackground"
@@ -239,7 +294,7 @@
                 android:id="@+id/customerarea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="3dp"
                 android:background="@drawable/edittextbackground"
                 android:gravity="start"
@@ -255,7 +310,7 @@
                 android:id="@+id/customerphoneno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/edittextbackground"
                 android:gravity="start"
                 android:hint="Phone Number"
@@ -270,15 +325,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintlayot5"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="2dp"
             android:background="?android:attr/windowBackground"
             app:layout_constraintTop_toBottomOf="@id/liner_layout5">
 
             <EditText
-                android:id="@+id/orderdescriptionET"
+                android:id="@+id/orderrequestET"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/edittextbackground"
@@ -290,54 +345,6 @@
                 tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/imagefororder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="320dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="55dp"
-            android:background="?android:attr/windowBackground" />
-
-        <ImageButton
-            android:id="@+id/closeorderimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:background="@null"
-            android:src="@drawable/ic_close"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constraintlayot5" />
-
-
-        <LinearLayout
-            android:id="@+id/linerlayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            android:orientation="vertical"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:ignore="MissingConstraints">
-
-            <Button
-                android:id="@+id/addorderphoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonbackground"
-                android:drawableLeft="@drawable/ic_image"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:text="    Photo"
-                android:textAllCaps="false"
-                android:textColor="@color/colorblack"
-                tools:ignore="MissingConstraints" />
-
-
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

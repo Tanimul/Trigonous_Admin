@@ -137,6 +137,9 @@ public class ProductCategories extends AppCompatActivity implements ItemClickInt
         alretdialog.show();
     }
 
+
+
+
     private void updatecategory(final String itemname, final String value) {
         final DatabaseReference databaseReference4 = FirebaseDatabase.getInstance().getReference("Categories");
         databaseReference4.keepSynced(true);

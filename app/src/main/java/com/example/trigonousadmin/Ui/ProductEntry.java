@@ -62,7 +62,6 @@ public class ProductEntry extends AppCompatActivity implements AdapterView.OnIte
     String categoriesname, productcode, productcategory;
     boolean edit_request;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +80,7 @@ public class ProductEntry extends AppCompatActivity implements AdapterView.OnIte
             productcode = intent.getString("productcode");
             productcategory = intent.getString("productcategory");
             edit_request = intent.getBoolean("edit_request");
+            filepath_uri = Uri.parse("not_null");
             updateproductinformation(productcategory, productcode);
 
         } else {
@@ -135,12 +135,16 @@ public class ProductEntry extends AppCompatActivity implements AdapterView.OnIte
                 Glide.with(getApplicationContext()).load(product.getProducturl())
                         .placeholder(R.drawable.ic_image).into(binding.imageforproduct);
 
-                binding.closeproductimage.setVisibility(View.VISIBLE);
+
                 binding.addproductphoto.setVisibility(View.GONE);
+                binding.productcodeET.setEnabled(false);
+                binding.productnameET.setEnabled(false);
+                binding.spinnerproductcategory.setEnabled(false);
 
                 Dialog.dismiss();
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
@@ -229,11 +233,11 @@ public class ProductEntry extends AppCompatActivity implements AdapterView.OnIte
         if (v == binding.back) {
             finish();
         } else if (v == binding.productentry) {
-            if(edit_request==true){
+            if (edit_request == true) {
                 Toast.makeText(this, "Edit Request", Toast.LENGTH_SHORT).show();
-                product_edit(productcode,productcategory);
+                product_edit(productcode, productcategory);
 
-            }else {
+            } else {
                 if (filledchecking()) {
                     productcodeavailable(categoriesname, binding.productcodeET.getText().toString());
                 } else {
@@ -395,84 +399,42 @@ public class ProductEntry extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    private void product_edit(final String product_id, final String area) {
+    private void product_edit(final String product_id, final String category) {
         Log.d(TAG, "Product Edit id " + product_id);
 
-        Toast.makeText(this, ""+filepath_uri, Toast.LENGTH_SHORT).show();
+        if (filledchecking()) {
+            progressDialog.setTitle("Updating the Product Information...");
+            progressDialog.show();
 
-//        if (filepath_uri != null && area != null && !TextUtils.isEmpty(details)) {
-//            progressDialog.setTitle("Updating the Complain...");
-//            progressDialog.show();
-//            final StorageReference storageReference3 = storageReference.child(System.currentTimeMillis() + "." + GetFileExtention(filepath_uri));
-//
-//
-//            storageReference3.putFile(filepath_uri)
-//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                            storageReference3.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                @Override
-//                                public void onSuccess(Uri uri) {
-//                                    String url = uri.toString();
-//
-//                                    progressDialog.dismiss();
-//
-//                                    Toast.makeText(PostDropComplain.this, "Successfully saved", Toast.LENGTH_SHORT).show();
-//                                    Log.d(TAG, "Update Done.");
-//
-//                                    Complain complain = new Complain(area, complain_id, url, date
-//                                            , details, firebaseAuth.getCurrentUser().getUid(), username);
-//                                    databaseReference.child(date).child(username).child(complain_id).setValue(complain);
-//
-//                                    Intent intent = new Intent(PostDropComplain.this, DropComplain.class);
-//                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                    startActivity(intent);
-//
-//                                }
-//                            });
-//
-//
-//                        }
-//                    }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    Log.d(TAG, "" + e.getMessage());
-//                    Toast.makeText(PostDropComplain.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-//
-//                }
-//            });
-//        } else {
-//            if (imagereq == true) {
-//
-//                progressDialog.setTitle("Updating the Complain...");
-//                progressDialog.show();
-//                if (!TextUtils.isEmpty(details) && edfilepath_uri != null && area != null) {
-//
-//                    HashMap<String, Object> hashMap = new HashMap<>();
-//                    hashMap.put("area", area);
-//                    hashMap.put("details", details);
-//
-//                    databaseReference.child(date).child(username).child(complain_id).updateChildren(hashMap);
-//
-//                    Toast.makeText(PostDropComplain.this, "Successfully saved", Toast.LENGTH_SHORT).show();
-//
-//                    Intent intent = new Intent(PostDropComplain.this, DropComplain.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    startActivity(intent);
-//                    progressDialog.dismiss();
-//                    Log.d(TAG, "Update Done.");
-//                } else {
-//                    progressDialog.dismiss();
-//                    Toast.makeText(PostDropComplain.this, "Please Put the all Informations ", Toast.LENGTH_SHORT).show();
-//                }
-//            } else {
-//                progressDialog.dismiss();
-//                Toast.makeText(PostDropComplain.this, "Please Put the all Informations ", Toast.LENGTH_SHORT).show();
-//            }
-//
-//
-//        }
-  }
+            String productdescription = binding.productdescriptionET.getText().toString();
+            int productprice = Integer.parseInt(binding.productpriceET.getText().toString());
+            int productquantity = Integer.parseInt(binding.productquantityET.getText().toString());
+            int productsell = Integer.parseInt(binding.productsellET.getText().toString());
+            int productavailable = Integer.parseInt(binding.productavailableET.getText().toString());
+            int productdiscountprice = Integer.parseInt(binding.productdiscountpriceET.getText().toString());
+
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("productdescription", productdescription);
+            hashMap.put("productprice", productprice);
+            hashMap.put("productquantity", productquantity);
+            hashMap.put("productsell", productsell);
+            hashMap.put("productavailable", productavailable);
+            hashMap.put("productdiscountprice", productdiscountprice);
+
+            databaseReference.child(category).child(product_id).updateChildren(hashMap);
+
+            Toast.makeText(ProductEntry.this, "Successfully saved", Toast.LENGTH_SHORT).show();
+
+            finish();
+            progressDialog.dismiss();
+            Log.d(TAG, "Update Done.");
+        } else {
+            progressDialog.dismiss();
+            Toast.makeText(ProductEntry.this, "Please Put the all Informations ", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
 
 }

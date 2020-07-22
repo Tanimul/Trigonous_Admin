@@ -148,7 +148,7 @@ public class ProductList extends AppCompatActivity implements ItemClickInterface
 
         alretdialog = new android.app.AlertDialog.Builder(ProductList.this);
         alretdialog.setTitle("Update the Product Information");
-        alretdialog.setMessage("Are tou sure to Update the Product Information?");
+        alretdialog.setMessage("Are you sure to Update the Product Information?");
         alretdialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -172,4 +172,6 @@ public class ProductList extends AppCompatActivity implements ItemClickInterface
 
 
     }
+
+
 }
